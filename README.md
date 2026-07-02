@@ -1,32 +1,38 @@
 # Estatemint Frontend
 
-فرانت‌اند فارسی و RTL برای پلتفرم املاک Estatemint، ساخته‌شده با Next.js، TypeScript و Tailwind CSS.
+Estatemint is a Persian, RTL-first real estate frontend built with Next.js, TypeScript, and Tailwind CSS.
 
-## تکنولوژی‌ها
+The current version is a static frontend foundation with mock property data. It is designed to be connected to the existing NestJS backend later, but no backend integration is implemented yet.
+
+## Tech Stack
 
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
 - ESLint
-- lucide-react برای آیکن‌ها
-- clsx و tailwind-merge برای مدیریت کلاس‌ها
+- lucide-react for icons
+- clsx and tailwind-merge for class name utilities
 
-## اجرای پروژه
+## Requirements
 
-نیازمندی Node.js:
+Next.js 16 requires Node.js 20.9.0 or newer.
 
 ```bash
 node >=20.9.0
 ```
+
+This repository includes `.nvmrc` with Node 24 as the preferred local version.
+
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-سپس آدرس [http://localhost:3000](http://localhost:3000) را باز کنید.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## اسکریپت‌ها
+## Scripts
 
 ```bash
 npm run dev
@@ -35,33 +41,47 @@ npm run build:webpack
 npm run lint
 ```
 
-اگر روی ویندوز با خطای Turbopack یا محدودیت اجرای پردازش مواجه شدید، `npm run build:webpack` مسیر جایگزین build است.
+If Turbopack has a local Windows process-permission issue, use:
 
-## متغیرهای محیطی
+```bash
+npm run build:webpack
+```
+
+## Environment Variables
 
 ```env
 NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/v1
 ```
 
-اگر مقدار بالا تنظیم نشود، همین آدرس به عنوان پیش‌فرض استفاده می‌شود.
+If this value is not set, the frontend defaults to `http://localhost:3000/api/v1`.
 
-## ساختار پروژه
+## Project Structure
 
 ```text
-src/app                 صفحات و layout اصلی
-src/components/layout   Header و Footer
-src/components/property اجزای مربوط به ملک
-src/components/forms    فرم‌های ورود و ثبت‌نام
-src/components/ui       اجزای پایه UI
-src/lib/api             پایه اتصال به API بک‌اند
-src/data                داده قابل مصرف صفحات
-src/mock-data           داده نمونه داخلی
-src/types               تایپ‌های دامنه
-docs/                   مستندات معماری
+src/app                 App Router pages and root layout
+src/components/layout   Header and footer components
+src/components/property Property cards, search, gallery, and consultation form
+src/components/forms    Login and register forms
+src/components/ui       Reusable UI primitives
+src/data                Page-facing data exports
+src/mock-data           Static mock property records
+src/lib/api             Future API client foundation
+src/types               Domain types
+docs/                   Architecture notes
 ```
 
-## وضعیت فعلی
+## Current Pages
 
-نسخه فعلی شامل صفحه خانه، لیست املاک، جزئیات ملک، درباره ما، تماس، ورود، ثبت‌نام، layout مشترک، mock data و API client foundation است. احراز هویت و جست‌وجوی واقعی پس از آماده شدن endpointهای بک‌اند به این ساختار متصل می‌شوند.
+- `/` home page
+- `/properties` property listing page
+- `/properties/[id]` property detail page
+- `/about` about page
+- `/contact` contact page
+- `/login` login UI placeholder
+- `/register` register UI placeholder
 
-جزئیات بیشتر در [docs/frontend-architecture.md](docs/frontend-architecture.md) آمده است.
+## Current Status
+
+The project currently includes a static Persian RTL UI, mock property data, reusable components, and an API client foundation. Authentication, search, favorites, appointments, uploads, and real property data should be connected after the backend endpoints are ready.
+
+See [docs/frontend-architecture.md](docs/frontend-architecture.md) for more details.

@@ -1,55 +1,93 @@
-# معماری فرانت‌اند Estatemint
+# Estatemint Frontend Architecture
 
-## راهبرد پروژه
+## Project Strategy
 
-این مخزن به عنوان فرانت‌اند مستقل Estatemint ساخته شده است. بک‌اند NestJS می‌تواند جداگانه توسعه و دیپلوی شود و این پروژه از طریق `NEXT_PUBLIC_API_BASE_URL` به API متصل خواهد شد.
+This repository is structured as the standalone frontend for Estatemint. The NestJS backend can continue to live in its own repository and expose APIs under `/api/v1`.
 
-گزینه‌های بررسی‌شده:
+This approach keeps frontend and backend concerns separate, avoids unnecessary monorepo migration work, and makes the frontend easier to present as a portfolio-grade product.
 
-- مونوریپو: برای اشتراک کد و اسکریپت‌ها مناسب است، اما وقتی بک‌اند در مخزن دیگری قرار دارد، انتقال آن هزینه و ریسک غیرضروری ایجاد می‌کند.
-- پوشه `frontend/`: وقتی خود مخزن فرانت‌اند است، یک لایه اضافی و بی‌فایده ایجاد می‌کند.
-- مخزن مستقل فرانت‌اند: انتخاب فعلی، ساده‌تر، تمیزتر و مناسب‌تر برای پورتفولیو و توسعه موازی.
-
-## ساختار
+## Architecture
 
 ```text
 src/
-  app/                  مسیرهای Next.js App Router
+  app/                  Next.js App Router routes
   components/
-    forms/              فرم‌های ورود و ثبت‌نام
-    layout/             Header و Footer
-    property/           کارت، جست‌وجو و گالری ملک
-    ui/                 اجزای پایه قابل استفاده مجدد
+    forms/              Login and register form UI
+    layout/             Header and footer
+    property/           Property cards, search, gallery, and consultation form
+    ui/                 Reusable UI primitives
+  data/                 Page-facing data exports
   lib/
-    api/                تنظیمات و fetch wrapper
-    utils.ts            ابزارهای عمومی UI
-  data/                 داده قابل مصرف صفحات
-  mock-data/            داده نمونه تا آماده شدن API
-  types/                تایپ‌های دامنه
+    api/                API config and fetch wrapper
+    utils.ts            Shared UI/data formatting utilities
+  mock-data/            Temporary static property data
+  types/                Domain-level TypeScript types
 ```
 
-## RTL و فارسی
+## RTL and Persian UI
 
-در `src/app/layout.tsx` مقدارهای `lang="fa"` و `dir="rtl"` روی سند اصلی تنظیم شده‌اند. تمام متن‌های قابل مشاهده، metadata صفحات، labelها، placeholderها و empty stateها فارسی نوشته شده‌اند.
+The application UI is Persian and RTL by default. The root document sets:
 
-## API
+```tsx
+<html lang="fa" dir="rtl">
+```
 
-فایل‌های `src/lib/api/*` پایه اتصال آینده به بک‌اند را فراهم می‌کنند:
+All user-facing UI text, form labels, placeholders, metadata, empty states, navigation labels, and buttons are Persian. Documentation is intentionally written in English.
 
-- `NEXT_PUBLIC_API_BASE_URL`
-- مقدار پیش‌فرض: `http://localhost:3000/api/v1`
-- wrapper برای `fetch`
-- ساختار typed برای پاسخ موفق و خطا
-- جایگاه آماده برای Bearer token
+## Design Direction
+
+The UI follows a premium real estate product direction:
+
+- large editorial hero section
+- prominent property search
+- warm luxury color palette
+- polished property cards
+- clean card shadows and spacing
+- responsive layouts for desktop, tablet, and mobile
+- static consultation/contact flows ready for future backend wiring
+
+The design is inspired by the provided real estate landing-page reference, but it does not copy proprietary assets, logos, images, or source code.
 
 ## Mock Data
 
-داده‌های نمونه در `src/mock-data/properties.ts` قرار دارند و از طریق `src/data/properties.ts` به صفحات ارائه می‌شوند. این داده‌ها با مدل‌های آینده `Property`، تصاویر، علاقه‌مندی‌ها و درخواست بازدید هم‌راستا طراحی شده‌اند. وقتی endpointهای ملک آماده شوند، صفحه `/properties` و `/properties/[id]` می‌توانند از API به جای mock data تغذیه شوند.
+Static property records live in:
 
-## برنامه اتصال بک‌اند
+```text
+src/mock-data/properties.ts
+```
 
-1. اضافه کردن endpointهای property search در بک‌اند.
-2. ساخت سرویس‌های typed در `src/lib/api`.
-3. اتصال login/register به ماژول Auth و ذخیره امن token.
-4. اضافه کردن favorites و appointments پس از آماده شدن authorization.
-5. جایگزینی mock data با cache و loading/error state واقعی.
+Pages consume them through:
+
+```text
+src/data/properties.ts
+```
+
+This gives the app a clean replacement point for future API-backed data.
+
+## API Foundation
+
+The API foundation lives in:
+
+```text
+src/lib/api/
+```
+
+It currently provides:
+
+- `NEXT_PUBLIC_API_BASE_URL`
+- default API URL: `http://localhost:3000/api/v1`
+- typed API response shapes
+- a fetch wrapper
+- a placeholder for Bearer token handling
+
+No backend integration is currently implemented.
+
+## Future Backend Integration Plan
+
+1. Add typed API services for property listing and property details.
+2. Replace mock property data with API calls.
+3. Connect login/register to the backend authentication module.
+4. Add JWT storage/refresh handling according to the backend auth strategy.
+5. Connect favorites after role-based authorization is ready.
+6. Connect appointment requests to the backend appointment model.
+7. Add upload support once backend upload APIs are available.
