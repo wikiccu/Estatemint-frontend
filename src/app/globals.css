@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f5ef;
+  --foreground: #161513;
+  --muted: #71717a;
+  --brand: #173f35;
+  --brand-dark: #0f2d27;
+  --accent: #b88945;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    "Vazirmatn", "IRANSans", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(135deg, rgba(184, 137, 69, 0.08), transparent 28%),
+    linear-gradient(315deg, rgba(23, 63, 53, 0.08), transparent 32%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.18);
+  color: #0f172a;
+}
+
+.container-page {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+}
+
+.estate-shadow {
+  box-shadow: 0 24px 80px rgba(22, 21, 19, 0.1);
+}
+
+.luxury-panel {
+  border: 1px solid rgba(120, 113, 108, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+}
