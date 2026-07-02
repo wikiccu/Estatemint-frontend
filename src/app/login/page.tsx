@@ -16,7 +16,7 @@ export default function LoginPage() {
           به حساب Estatemint خود وارد شوید
         </h1>
         <p className="mt-4 leading-8 text-zinc-600">
-          این فرم برای اتصال آینده به احراز هویت JWT بک‌اند آماده شده و فعلا جریان نمایشی دارد.
+          ورود از طریق API بک‌اند انجام می‌شود و توکن JWT برای درخواست‌های محافظت‌شده ذخیره می‌شود.
         </p>
       </section>
       <section>
@@ -26,7 +26,7 @@ export default function LoginPage() {
         </div>
         <p className="mt-5 text-center text-sm text-zinc-600">
           حساب ندارید؟{" "}
-          <Link href="/register" className="font-bold text-teal-800">
+          <Link href="/register" className="font-bold text-[#123c35]">
             ثبت‌نام کنید
           </Link>
         </p>

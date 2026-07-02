@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f5ef;
-  --foreground: #161513;
-  --muted: #71717a;
-  --brand: #173f35;
-  --brand-dark: #0f2d27;
-  --accent: #b88945;
+  --background: #f4f6f2;
+  --foreground: #15171a;
+  --muted: #667085;
+  --brand: #123c35;
+  --brand-dark: #0a2925;
+  --accent: #c9783d;
+  --blue: #315d78;
+  --gold: #d5a249;
 }
 
 @theme inline {
@@ -29,8 +31,8 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(135deg, rgba(184, 137, 69, 0.08), transparent 28%),
-    linear-gradient(315deg, rgba(23, 63, 53, 0.08), transparent 32%);
+    linear-gradient(180deg, rgba(49, 93, 120, 0.08), transparent 38%),
+    linear-gradient(120deg, rgba(201, 120, 61, 0.08), transparent 44%);
 }
 
 button,
@@ -41,8 +43,8 @@ textarea {
 }
 
 ::selection {
-  background: rgba(15, 118, 110, 0.18);
-  color: #0f172a;
+  background: rgba(201, 120, 61, 0.24);
+  color: #15171a;
 }
 
 .container-page {
@@ -51,11 +53,16 @@ textarea {
 }
 
 .estate-shadow {
-  box-shadow: 0 24px 80px rgba(22, 21, 19, 0.1);
+  box-shadow: 0 28px 90px rgba(21, 23, 26, 0.12);
 }
 
 .luxury-panel {
-  border: 1px solid rgba(120, 113, 108, 0.18);
-  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(21, 23, 26, 0.08);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(18px);
+}
+
+.section-surface {
+  border-block: 1px solid rgba(21, 23, 26, 0.06);
+  background: #ffffff;
 }

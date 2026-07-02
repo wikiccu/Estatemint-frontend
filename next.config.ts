@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
+  async rewrites() {
+    return [
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
+        source: "/backend-api/:path*",
+        destination: "http://localhost:5000/api/v1/:path*",
       },
-    ],
+    ];
   },
 };
 

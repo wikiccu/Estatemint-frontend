@@ -31,7 +31,7 @@ export default function AboutPage() {
     <>
       <section className="container-page grid gap-10 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
-          <p className="text-sm font-black text-[#9b7138]">درباره Estatemint</p>
+          <p className="text-sm font-black text-[#c9783d]">درباره Estatemint</p>
           <h1 className="mt-3 text-4xl font-black leading-[1.45] text-zinc-950 md:text-5xl">
             ساختن تجربه‌ای قابل اعتماد برای بازار املاک
           </h1>
@@ -42,7 +42,7 @@ export default function AboutPage() {
         </div>
         <div className="relative min-h-[420px] overflow-hidden rounded-lg">
           <Image
-            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1300&q=85"
+            src="/placeholders/interior-living.svg"
             alt="فضای نشیمن ملک لوکس"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -60,8 +60,8 @@ export default function AboutPage() {
           />
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {values.map((value) => (
-              <article key={value.title} className="rounded-lg border border-stone-200 bg-stone-50 p-6">
-                <value.icon className="text-[#173f35]" size={30} />
+              <article key={value.title} className="rounded-lg border border-zinc-200 bg-[#f7f8f5] p-6 shadow-sm">
+                <value.icon className="text-[#315d78]" size={30} />
                 <h2 className="mt-6 text-xl font-black text-zinc-950">{value.title}</h2>
                 <p className="mt-3 text-sm leading-7 text-zinc-600">{value.text}</p>
               </article>
@@ -78,8 +78,8 @@ export default function AboutPage() {
             ["Tailwind CSS", "طراحی واکنش‌گرا"],
             ["RTL", "فارسی از پایه"],
           ].map(([title, text]) => (
-            <div key={title} className="rounded-lg bg-[#173f35] p-6 text-white">
-              <Award className="text-[#f4dfbd]" size={26} />
+            <div key={title} className="rounded-lg bg-[#15171a] p-6 text-white shadow-xl">
+              <Award className="text-[#d5a249]" size={26} />
               <h2 className="mt-5 text-xl font-black">{title}</h2>
               <p className="mt-2 text-sm text-stone-100">{text}</p>
             </div>

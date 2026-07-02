@@ -17,10 +17,10 @@ export default function PropertiesPage() {
 
   return (
     <div className="container-page py-10">
-      <section className="rounded-lg bg-[#173f35] p-6 text-white md:p-10">
+      <section className="rounded-lg bg-[#15171a] p-6 text-white shadow-xl md:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-end">
           <div>
-            <p className="text-sm font-black text-[#f4dfbd]">بازار املاک Estatemint</p>
+            <p className="text-sm font-black text-[#d5a249]">بازار املاک Estatemint</p>
             <h1 className="mt-3 text-3xl font-black leading-[1.45] md:text-5xl">
               فهرست املاک منتخب برای خرید و سرمایه‌گذاری
             </h1>
@@ -41,22 +41,22 @@ export default function PropertiesPage() {
             فیلترهای سریع
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <button className="inline-flex h-10 items-center gap-2 rounded-md border border-stone-200 bg-white px-4 text-sm font-bold text-zinc-700">
+            <button className="inline-flex h-10 items-center gap-2 rounded-md border border-zinc-200 bg-white px-4 text-sm font-bold text-zinc-700">
               <ListFilter size={17} />
               جدیدترین
             </button>
-            <button className="inline-flex size-10 items-center justify-center rounded-md bg-[#173f35] text-white">
+            <button className="inline-flex size-10 items-center justify-center rounded-md bg-[#123c35] text-white">
               <Grid2X2 size={18} />
             </button>
           </div>
         </div>
 
-        <div className="mt-5 grid gap-3 rounded-lg border border-stone-200 bg-white p-4 md:grid-cols-5">
+        <div className="mt-5 grid gap-3 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm md:grid-cols-5">
           {filters.map((filter) => (
             <button
               key={filter}
               type="button"
-              className="h-11 rounded-md border border-stone-200 bg-stone-50 px-4 text-sm font-semibold text-zinc-700 transition hover:border-[#173f35] hover:bg-white hover:text-[#173f35]"
+              className="h-11 rounded-md border border-zinc-200 bg-[#f7f8f5] px-4 text-sm font-semibold text-zinc-700 transition hover:border-[#123c35] hover:bg-white hover:text-[#123c35]"
             >
               {filter}
             </button>

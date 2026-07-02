@@ -16,7 +16,7 @@ export default function RegisterPage() {
           حساب کاربری Estatemint بسازید
         </h1>
         <p className="mt-4 leading-8 text-zinc-600">
-          ساختار فرم برای اعتبارسنجی حرفه‌ای، نقش‌های کاربری و اتصال به ماژول Auth بک‌اند آماده است.
+          ثبت‌نام به ماژول Auth بک‌اند متصل است و حساب جدید با نقش پیش‌فرض خریدار ساخته می‌شود.
         </p>
       </section>
       <section>
@@ -26,7 +26,7 @@ export default function RegisterPage() {
         </div>
         <p className="mt-5 text-center text-sm text-zinc-600">
           قبلا ثبت‌نام کرده‌اید؟{" "}
-          <Link href="/login" className="font-bold text-teal-800">
+          <Link href="/login" className="font-bold text-[#123c35]">
             وارد شوید
           </Link>
         </p>

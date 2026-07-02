@@ -6,12 +6,12 @@ type Variant = "primary" | "secondary" | "ghost" | "outline";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[#173f35] text-white shadow-sm hover:bg-[#0f2d27] focus-visible:outline-[#173f35]",
+    "bg-[#123c35] text-white shadow-sm hover:bg-[#0a2925] focus-visible:outline-[#123c35]",
   secondary:
-    "bg-[#b88945] text-white shadow-sm hover:bg-[#9b7138] focus-visible:outline-[#b88945]",
-  ghost: "text-zinc-700 hover:bg-zinc-100 focus-visible:outline-zinc-500",
+    "bg-[#c9783d] text-white shadow-sm hover:bg-[#a95f2c] focus-visible:outline-[#c9783d]",
+  ghost: "text-zinc-700 hover:bg-white hover:text-[#123c35] focus-visible:outline-zinc-500",
   outline:
-    "border border-stone-200 bg-white text-zinc-900 hover:border-[#173f35] hover:text-[#173f35] focus-visible:outline-[#173f35]",
+    "border border-zinc-200 bg-white text-zinc-900 hover:border-[#123c35] hover:text-[#123c35] focus-visible:outline-[#123c35]",
 };
 
 const baseClass =

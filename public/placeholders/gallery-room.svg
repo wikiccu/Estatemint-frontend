@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Gallery image placeholder</title>
+  <desc id="desc">Replace with a real gallery photo sized 900 by 700 pixels.</desc>
+  <rect width="900" height="700" fill="#f7f8f5"/>
+  <rect x="110" y="120" width="680" height="390" rx="20" fill="#ffffff" stroke="#d7dde2" stroke-width="4"/>
+  <path d="M160 470 340 300l130 120 110-90 170 140" fill="none" stroke="#315d78" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="650" cy="230" r="52" fill="#d5a249"/>
+  <text x="450" y="590" text-anchor="middle" fill="#15171a" font-family="Arial, sans-serif" font-size="34" font-weight="700">Gallery Placeholder</text>
+  <text x="450" y="635" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="22">Use real image - 900x700</text>
+</svg>

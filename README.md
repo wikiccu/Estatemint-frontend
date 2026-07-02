@@ -2,7 +2,7 @@
 
 Estatemint is a Persian, RTL-first real estate frontend built with Next.js, TypeScript, and Tailwind CSS.
 
-The current version is a static frontend foundation with mock property data. It is designed to be connected to the existing NestJS backend later, but no backend integration is implemented yet.
+The current version includes real authentication integration with the EstateMint NestJS backend and static mock property data. Property, favorite, appointment, upload, and admin APIs are not called because they are not implemented by the backend yet.
 
 ## Tech Stack
 
@@ -50,10 +50,33 @@ npm run build:webpack
 ## Environment Variables
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/v1
+NEXT_PUBLIC_API_BASE_URL=/backend-api
 ```
 
-If this value is not set, the frontend defaults to `http://localhost:3000/api/v1`.
+If this value is not set, the frontend defaults to `/backend-api`.
+
+`/backend-api` is a same-origin Next.js rewrite to the local backend:
+
+```text
+http://localhost:5000/api/v1
+```
+
+This keeps browser requests same-origin and avoids CORS preflight issues during local development.
+
+## Image Placeholders
+
+The app does not use remote image URLs for mock property images. Local SVG placeholders live in:
+
+```text
+public/placeholders/
+```
+
+Replace them with real optimized photos later using these suggested sizes:
+
+- Hero image: `1800x1000`
+- Property card image: `1200x900`
+- Property detail gallery image: `900x700`
+- Interior/CTA image: `1200x800`
 
 ## Project Structure
 
@@ -65,7 +88,7 @@ src/components/forms    Login and register forms
 src/components/ui       Reusable UI primitives
 src/data                Page-facing data exports
 src/mock-data           Static mock property records
-src/lib/api             Future API client foundation
+src/lib/api             API client and auth services
 src/types               Domain types
 docs/                   Architecture notes
 ```
@@ -82,6 +105,6 @@ docs/                   Architecture notes
 
 ## Current Status
 
-The project currently includes a static Persian RTL UI, mock property data, reusable components, and an API client foundation. Authentication, search, favorites, appointments, uploads, and real property data should be connected after the backend endpoints are ready.
+The project currently includes a Persian RTL UI, mock property data, reusable components, and real auth integration for register, login, token persistence, logout, and current-user bootstrap. Search, property APIs, favorites, appointments, uploads, and admin flows should be connected after those backend endpoints are ready.
 
 See [docs/frontend-architecture.md](docs/frontend-architecture.md) for more details.

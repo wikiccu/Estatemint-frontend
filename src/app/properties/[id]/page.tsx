@@ -52,7 +52,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     <div className="container-page py-10">
       <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <div>
-          <p className="flex items-center gap-2 text-sm font-bold text-[#9b7138]">
+          <p className="flex items-center gap-2 text-sm font-bold text-[#c9783d]">
             <MapPin size={17} />
             {property.city}، {property.district}
           </p>
@@ -60,9 +60,9 @@ export default async function PropertyDetailPage({ params }: PageProps) {
             {property.title}
           </h1>
         </div>
-        <div className="rounded-lg border border-stone-200 bg-white px-5 py-4 shadow-sm">
+        <div className="rounded-lg border border-zinc-200 bg-white px-5 py-4 shadow-sm">
           <p className="text-xs font-bold text-zinc-500">قیمت فروش</p>
-          <p className="mt-1 text-2xl font-black text-[#173f35]">
+          <p className="mt-1 text-2xl font-black text-[#123c35]">
             {formatPrice(property.price, property.currency)}
           </p>
         </div>
@@ -74,8 +74,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         <article>
           <dl className="grid gap-4 md:grid-cols-4">
             {specs.map((item) => (
-              <div key={item.label} className="rounded-lg border border-stone-200 bg-white p-5 shadow-sm">
-                <item.icon className="text-[#173f35]" size={22} />
+              <div key={item.label} className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm">
+                <item.icon className="text-[#315d78]" size={22} />
                 <dt className="mt-4 text-xs font-semibold text-zinc-500">{item.label}</dt>
                 <dd className="mt-1 text-lg font-black text-zinc-950">{item.value}</dd>
               </div>
@@ -93,9 +93,9 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               {property.features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-3 rounded-md bg-stone-50 px-4 py-3 text-sm font-bold text-zinc-700"
+                  className="flex items-center gap-3 rounded-md bg-[#f7f8f5] px-4 py-3 text-sm font-bold text-zinc-700"
                 >
-                  <CheckCircle2 className="text-[#173f35]" size={18} />
+                  <CheckCircle2 className="text-[#123c35]" size={18} />
                   {feature}
                 </div>
               ))}
@@ -103,9 +103,9 @@ export default async function PropertyDetailPage({ params }: PageProps) {
           </section>
         </article>
 
-        <aside className="h-fit rounded-lg border border-stone-200 bg-white p-6 shadow-xl">
+        <aside className="h-fit rounded-lg border border-zinc-200 bg-white p-6 shadow-xl">
           <div className="flex items-center gap-3">
-            <div className="flex size-12 items-center justify-center rounded-md bg-[#173f35]/10 text-[#173f35]">
+            <div className="flex size-12 items-center justify-center rounded-md bg-[#123c35]/10 text-[#123c35]">
               <ShieldCheck size={24} />
             </div>
             <div>
@@ -113,11 +113,11 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               <h2 className="font-black text-zinc-950">{property.agentName}</h2>
             </div>
           </div>
-          <div className="mt-5 flex items-center gap-2 rounded-md bg-stone-50 px-4 py-3 text-sm font-bold text-zinc-700">
+          <div className="mt-5 flex items-center gap-2 rounded-md bg-[#e8eef1] px-4 py-3 text-sm font-bold text-zinc-700">
             <Phone size={17} />
             {property.agentPhone}
           </div>
-          <div className="mt-6 border-t border-stone-200 pt-6">
+          <div className="mt-6 border-t border-zinc-200 pt-6">
             <h3 className="text-lg font-black text-zinc-950">درخواست مشاوره و بازدید</h3>
             <p className="mt-2 text-sm leading-7 text-zinc-600">
               اطلاعات خود را ثبت کنید تا مشاور Estatemint برای هماهنگی بازدید با شما تماس بگیرد.

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Hero property placeholder</title>
+  <desc id="desc">Replace with a real luxury property photo sized 1800 by 1000 pixels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2925"/>
+      <stop offset="0.55" stop-color="#315d78"/>
+      <stop offset="1" stop-color="#c9783d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1800" height="1000" fill="url(#bg)"/>
+  <path d="M220 705 900 255l680 450v105H220z" fill="#f4f6f2" opacity=".9"/>
+  <path d="M430 695h940v115H430z" fill="#15171a" opacity=".22"/>
+  <rect x="705" y="570" width="170" height="240" rx="8" fill="#123c35"/>
+  <rect x="960" y="545" width="145" height="120" rx="8" fill="#315d78"/>
+  <rect x="1160" y="545" width="145" height="120" rx="8" fill="#315d78"/>
+  <text x="900" y="140" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Hero Photo Placeholder</text>
+  <text x="900" y="210" text-anchor="middle" fill="#f7d999" font-family="Arial, sans-serif" font-size="34">Replace with real property image - 1800x1000</text>
+</svg>

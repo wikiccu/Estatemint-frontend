@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Villa property placeholder</title>
+  <desc id="desc">Replace with a real villa photo sized 1200 by 900 pixels.</desc>
+  <rect width="1200" height="900" fill="#f4f6f2"/>
+  <path d="M210 620 600 330l390 290v105H210z" fill="#ffffff"/>
+  <path d="M250 615 600 350l350 265" fill="none" stroke="#123c35" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="505" y="565" width="190" height="160" rx="10" fill="#c9783d"/>
+  <rect x="295" y="585" width="135" height="90" rx="10" fill="#315d78"/>
+  <rect x="770" y="585" width="135" height="90" rx="10" fill="#315d78"/>
+  <text x="600" y="105" text-anchor="middle" fill="#15171a" font-family="Arial, sans-serif" font-size="42" font-weight="700">Villa Photo Placeholder</text>
+  <text x="600" y="160" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="28">Use real image - 1200x900</text>
+</svg>

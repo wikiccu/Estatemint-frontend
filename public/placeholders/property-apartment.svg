@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Apartment property placeholder</title>
+  <desc id="desc">Replace with a real apartment photo sized 1200 by 900 pixels.</desc>
+  <rect width="1200" height="900" fill="#e8eef1"/>
+  <rect x="210" y="210" width="780" height="500" rx="24" fill="#ffffff"/>
+  <rect x="290" y="290" width="150" height="130" rx="10" fill="#315d78"/>
+  <rect x="525" y="290" width="150" height="130" rx="10" fill="#315d78"/>
+  <rect x="760" y="290" width="150" height="130" rx="10" fill="#315d78"/>
+  <rect x="525" y="505" width="150" height="205" rx="10" fill="#123c35"/>
+  <text x="600" y="105" text-anchor="middle" fill="#15171a" font-family="Arial, sans-serif" font-size="42" font-weight="700">Property Photo Placeholder</text>
+  <text x="600" y="160" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="28">Use real image - 1200x900</text>
+</svg>
